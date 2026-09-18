@@ -1,15 +1,11 @@
 const express = require('express');
-const userRoutes = require('./routes/userRoutes');
-const productRoutes = require('./routes/productRoutes');
-const cartRoutes = require('./routes/cartRoutes');
+const routes = require('./routes');
 
 const app = express();
 
 app.use(express.json());
 
-app.use('/users', userRoutes);
-app.use('/products', productRoutes);
-app.use('/cart', cartRoutes);
+app.use('/', routes);
 
 const PORT = 3000;
 app.listen(PORT, () => {
